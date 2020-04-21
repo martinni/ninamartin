@@ -18,4 +18,4 @@ On my free time I like to run around London's parks and -very slowly- learn how 
 
 I created this site to write about all sorts of things: stuff I read about, stuff I found interesting, places I've been, random thoughts I've had...
 
-You can reach out to me at [this address](mailto:nina.utc@gmail.com). Like this blog? Check out [this one](https://jackmorris.xyz/).
+If you want to reach out, you can send me an [email](mailto:nina.utc@gmail.com). Like this blog? Check out [this one](https://jackmorris.xyz/).
