@@ -4,15 +4,18 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+{:refdef: style="text-align: center;"}
+![me](/img/me.png)
+{: refdef}
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Hi,
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I'm a software engineer based in London. I moved there about 5 years ago. Before that I grew up and studied in France, and spent a year in the US.
 
+I currently work at [Bloomberg LP](https://www.bloomberg.com/london/). I work on backend features supporting the Bloomberg terminal, using mainly C++ and Python. You can find me on [Linkedin](https://www.linkedin.com/in/nina-martin-20b4648b/).
 
-[jekyll-organization]: https://github.com/jekyll
+On my free time I like to run around London's parks and -very slowly- learn how to play the piano.  
+
+I created this site to write about all sorts of things: stuff I read about, stuff I found interesting, places I've been, random thoughts I've had...
+
+You can reach out to me at [this address](mailto:nina.utc@gmail.com). Like this blog? Check out [this one](https://jackmorris.xyz/).
