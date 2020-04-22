@@ -13,7 +13,7 @@ But first of all, what is *Sapiens* all about? Its aim is to recount in a few hu
 
 
 {:refdef: style="text-align: center;"}
-![Sapiens](/img/sapiens.jpg)
+![Sapiens](/img/sapiens-cover.jpg)
 {: refdef}
 
 
