@@ -13,19 +13,23 @@ Here we are considering a stack too large to fit in memory, and the cost of main
 
 We don't need to go into great details about memory management to solve this problem but let's just recap the fundamentals to make sure everyone is on the same (pun unintended) page.
 
-Computer memory is divided between main memory (the RAM) and secondary memory (the hard drive).
+Computer memory is divided between main memory (the RAM) and secondary memory (the disk).
 
-Main memory consists of silicon chips made of lots of transistors, and by lots I mean *billions*. Each transistor is paired with a "memory cell" that contains a bit of information. The memory cell is a capacitator (you can think of it as a tiny battery) wich represent a 1 when filled with electrons and a 0 when empty. The transistor acts as a switch on the capacitator. Any read or write operation is based on electricity flowing through an electronic circuit. Therefore, RAM access is very fast, it's *nanoseconds* fast. RAM is also expensive. 
+Main memory consists of silicon chips made of lots of transistors, and by lots I mean *billions*. Each transistor is paired with a "memory cell" that contains a bit of information. The memory cell is a capacitator (you can think of it as a tiny battery) wich represent a 1 when filled with electrons and a 0 when empty. The transistor acts as a switch on the capacitator. Any read or write operation is based on electricity flowing through an electronic circuit. Therefore, RAM access is very fast, it's *nanoseconds* fast. But it's also volatile, the data disappears as soon as you cut power. Besides, RAM is also expensive. 
 
-That is why computers also have a hard drive. For traditonal hard drives (SDD storage is different), this secondary storage is based on magnetic platters rotating around a spindle. These platters are divided into billions of tiny areas that contain either a 0 (unmagnetised cell) or a 1 (magnetised cell). Each platter is read and written with a magnetic head at the end of an arm. The arms can move their heads towards or away from the spindle. To read or write a cell, we need the arm's head to reach that cell which involves two mechanical movements: the platter rotation and the movement of the arm itself. To reach a particular cell, you might have to wait for a full platter rotation which is in the order of milliseconds. Because disk access is based on mechanical movements, disks are slow. But disks are cheap. This is why computers have much more capacity on their hard drive than their main memory. 
+That is why computers also have a secondary storage.
+
+For traditonal hard drives (HDD), this secondary storage is based on magnetic platters rotating around a spindle. These platters are divided into billions of tiny areas that contain either a 0 (unmagnetised cell) or a 1 (magnetised cell). Each platter is read and written with a magnetic head at the end of an arm. The arms can move their heads towards or away from the spindle. To read or write a cell, we need the arm's head to reach that cell which involves two mechanical movements: the platter rotation and the movement of the arm itself. To reach a particular cell, you might have to wait for a full platter rotation which is in the order of milliseconds. Because disk access is based on mechanical movements, hard drives are slow.
 
 {:refdef: style="text-align: center;"}
 ![hard drive](/img/hard-drive.png)
 <br/><br/>
-*A typical hard drive*
+*A traditional hard drive*
 {: refdef}
 
-In order to optimise the time spent on mechanical movements, disks access not just one element at a time but several. Information on a disk is divided into equal size blocks of bits, called *pages*. Once the arm's head is positioned correctly and the platter has rotated to the desired page, reading and writing is entirely electronic and the disk can quickly read or write large amounts of data.
+In recent years hard drives have been supplanted with solid state drives. Just like RAM, these are based on integrated circuits and are therefore much faster than disk. Unlike RAM, the memory is non volatile which means you can persist it when the power is off. It's still not nearly as fast as RAM because of the data throughput capacity between the drive and the motherboard.
+
+In order to optimise the time spent on mechanical movements (for HDD), or data transfer, disks access not just one element at a time but several. Information on a disk is divided into equal size blocks of bits, called *pages*.
 
 For the rest of this article, we will refer to "disk access" as the number of pages that need to be read and written to the disk.
 
