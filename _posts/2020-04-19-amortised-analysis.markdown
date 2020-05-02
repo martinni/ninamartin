@@ -40,7 +40,7 @@ The potential method introduces the concept of a “potential function” associ
 
 Let’s name this potential function Φ. The amortised cost ĉ<sub>i</sub> of the *i*th operation on data structure D is defined as the cost of the operation c(i) plus the difference of potential before and after the operation. In other words, <code>ĉ<sub>i</sub> = c<sub>i</sub> + (Φ(D<sub>i</sub>) - Φ(D<sub>i-1</sub>)</code>.  From this, it follows that the amortised cost for a series of n operations is:
  <pre>∑(ĉ<sub>i</sub>) =  ∑(c<sub>i</sub> + (Φ(D<sub>i</sub>) - Φ(D<sub>i-1</sub>))
-      =  ∑(c<sub>i</sub> + Φ(D<sub>n</sub>) - Φ(D<sub>0</sub>)</pre>  where the Φ(D<sub>i</sub>) terms cancel each other because of [telescoping](https://en.wikipedia.org/wiki/Telescoping_series).
+      =  ∑(c<sub>i</sub>) + Φ(D<sub>n</sub>) - Φ(D<sub>0</sub>)</pre>  where the Φ(D<sub>i</sub>) terms cancel each other because of [telescoping](https://en.wikipedia.org/wiki/Telescoping_series).
 
 Therefore if we can find a function Φ so that <code>Φ(D<sub>n</sub>) >= Φ(D<sub>0</sub>)</code>, we can use it to get an upper bound on the cost of this series of N operations, which is what we were trying to determine in the first place.
 
