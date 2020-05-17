@@ -81,7 +81,7 @@ What happened here is the same “rationalising” process that happened with th
 
 ## The stories we tell ourselves
 
-What do these four experiments tell us? That the left hemisphere of the brain is not only the seat of our verbal abilities but also of an “internal interpreter” that constantly tries to make sense of our life, using partial clues to provide explanations about what we experience. The left brain interpreter “holds the story together”, it reconciles the past with the present, plans the future immediate and distant future, and provide a sense of continuity in our lives.
+What do these four experiments tell us? That the left hemisphere of the brain is not only the seat of our verbal abilities but also of an “internal interpreter” that constantly tries to make sense of our life, using partial clues to provide explanations about what we experience. The left brain interpreter “holds the story together”, it reconciles the past with the present, plans the immediate and distant future, and provide a sense of continuity in our lives.
 
 The patient B experiment is interesting because it hints at the idea that our left brain interpreter is acting a censor on our own ideas and projects. Planning to be a draughtsman is a more realistic and down-to-earth project than being a Formula 1 pilot. This raises the question, how much of our instincts and ideas get censored by our left brain? What else would our right brain have to say if we isolated it from the left brain influence? 
 
