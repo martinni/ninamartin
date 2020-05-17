@@ -96,4 +96,4 @@ The left brain interpreter is probably a crucial element for human survival. Wit
 
 I have to admit that reading about these studies, however fascinating they are, made me feel a bit down. Even if I was familiar with the concept of confirmation bias, I hadn’t realised that it was ingrained so deeply into our biology. It’s a bit hard, after reading this, to have any opinion about anything. Even when you try to stick to facts and data, how much of your judgement is distorted by your left brain interpreter? How much of the stuff that motivate and inspire you is just your left brain tricking you into finding a purpose for living your life?
 
-Alright, this is getting a bit too deep. Maybe I should go back to read *Introduction to Algorithms*.
+Alright, this is getting a bit too deep. Maybe I should go back to reading *Introduction to Algorithms*.
