@@ -19,7 +19,7 @@ Main memory consists of silicon chips made of lots of transistors, and by lots I
 
 That is why computers also have a secondary storage.
 
-For traditonal hard drives (HDD), this secondary storage is based on magnetic platters rotating around a spindle. These platters are divided into billions of tiny areas that contain either a 0 (unmagnetised cell) or a 1 (magnetised cell). Each platter is read and written with a magnetic head at the end of an arm. The arms can move their heads towards or away from the spindle. To read or write a cell, we need the arm's head to reach that cell which involves two mechanical movements: the platter rotation and the movement of the arm itself. To reach a particular cell, you might have to wait for a full platter rotation which is in the order of milliseconds. Because disk access is based on mechanical movements, hard drives are slow.
+For a few decades we used hard disk drives (HDD) as secondary storage. Hard drives are essentially on magnetic platters rotating around a spindle. These platters are divided into billions of tiny areas that contain either a 0 (unmagnetised cell) or a 1 (magnetised cell). Each platter is read and written with a magnetic head at the end of an arm. The arms can move their heads towards or away from the spindle. To read or write a cell, we need the arm's head to reach that cell which involves two mechanical movements: the platter rotation and the movement of the arm itself. To reach a particular cell, you might have to wait for a full platter rotation which is in the order of milliseconds. Because disk access is based on mechanical movements, hard drives are slow.
 
 {:refdef: style="text-align: center;"}
 ![hard drive](/img/hard-drive.png)
