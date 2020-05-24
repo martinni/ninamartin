@@ -116,4 +116,6 @@ For POP, we are removing an element at the beginning of one of the two currently
 
 That's it!
 
-With the potential function of <code>Φ(S) = |S.size - M|</code> we have proved that the amortised cost of both PUSH and POP was constant with the two pages implementation. I think it's really cool that a small adjustment in the stack implementation allows us to change the worst case complexity in such a drastic way. This is an application of amortised analysis where you have to "visualise" the operations to make sense of the maths.
+With the potential function of <code>Φ(S) = |S.size - M|</code> we have proved that the amortised cost of both PUSH and POP was constant with the two pages implementation. Visually you can see that our previous boundary problem has been solved, as a push following this pop would not incur any disk access.
+
+I think it's really cool that a small adjustment in the stack implementation allows us to change the worst case complexity in such a drastic way. This is an application of amortised analysis where you have to "visualise" the operations to make sense of the maths.
