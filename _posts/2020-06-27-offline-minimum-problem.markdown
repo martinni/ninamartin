@@ -5,7 +5,9 @@ date:   2020-06-27 16:43:00 +0100
 categories: algorithms
 ---
 
-Continuing my journey through [Algorithms](https://www.amazon.co.uk/Introduction-Algorithms-Thomas-H-Cormen/dp/0262033844/ref=sr_1_1?adgrpid=52755502465&dchild=1&gclid=EAIaIQobChMIp4-WpbSi6gIV6YBQBh33twKZEAAYASAAEgJcbvD_BwE&hvadid=259080196986&hvdev=c&hvlocphy=9045997&hvnetw=g&hvqmt=e&hvrand=17787531869004437962&hvtargid=kwd-300139095800&hydadcr=17612_1775484&keywords=introduction+to+algorithm&qid=1593275108&sr=8-1&tag=googhydr-21), I just finished the "Advanced data structures" section which walked me through the wonderful world of B-Trees, Fibonacci heaps, van Emde Boas Trees and Disjoint sets. B-Trees are fairly simple to grasp (tl;dr: high branching factor, optimised disk access). Fibonacci heaps are a bit fiddly for certain operations but ok if you have a visual representation of the heap to follow what's going on. Van Emde Boas trees.. I don't really want to talk about them (my head still hurts from that chapter). And finally, we've got lovely disjoint sets, which are simple yet incredibly efficient thanks to a couple of well-chosen heuristics.
+Continuing my journey through [Algorithms](https://www.amazon.co.uk/Introduction-Algorithms-Thomas-H-Cormen/dp/0262033844/ref=sr_1_1?adgrpid=52755502465&dchild=1&gclid=EAIaIQobChMIp4-WpbSi6gIV6YBQBh33twKZEAAYASAAEgJcbvD_BwE&hvadid=259080196986&hvdev=c&hvlocphy=9045997&hvnetw=g&hvqmt=e&hvrand=17787531869004437962&hvtargid=kwd-300139095800&hydadcr=17612_1775484&keywords=introduction+to+algorithm&qid=1593275108&sr=8-1&tag=googhydr-21), I just finished the "Advanced data structures" section which walked me through the wonderful world of B-Trees, Fibonacci heaps, van Emde Boas Trees and Disjoint sets.
+
+B-Trees are fairly simple to grasp (tl;dr: high branching factor, optimised disk access). Fibonacci heaps are a bit fiddly for certain operations but ok if you have a visual representation of the heap to follow what's going on. Van Emde Boas trees.. I don't really want to talk about them (my head still hurts from that chapter). And finally, we've got lovely disjoint sets, which are simple yet incredibly efficient thanks to a couple of well-chosen heuristics.
 
 After reading the disjoint sets chapter, I decided to give a go to the first problem exposed in the book referred to as the "off-line" minimum.
 
@@ -66,7 +68,7 @@ The implementation is two-fold. First we build the disjoint sets forest and the 
 
 Here's the code:
 
-```Python
+```python
 #!/usr/bin/env python3
 
 import collections
@@ -77,7 +79,7 @@ from pyllist import sllist
 def build_forest(sequence):
     forest = DisjointSet()
     root_ll = sllist()  # linked list to easily find next tree-set K(l)
-    root_data = {}  # dict to map elements to their index j and corresponding linked list node
+    root_data = {}  # dict mapping elements to their index and linked list node
 
     if not sequence:
         return forest, root_ll, root_data
@@ -98,7 +100,9 @@ def build_forest(sequence):
             current_tree_root = key
         else:
             forest.union(current_tree_root, key)
-            current_tree_root = forest.find(key)  # the root for the current set might have changed after the union operation due to the union by rank heuristic
+            # the root for the current set might have changed
+            # due to the union by rank heuristic
+            current_tree_root = forest.find(key)
 
     if current_tree_root:
         # Put last tree root inside the linked list
@@ -121,22 +125,26 @@ def off_line_minimum(domain, sequence):
             key_root_index, key_root_node = root_data[key_root]
             
             if key_root_index == extractions_count:
-                # key is in the tree that was formed after the last extraction, it can't be the in extracted array
+                # key is in the tree that was formed after the last extraction
+                # it can't be the in extracted array
                 continue
             
             extracted[key_root_index] = key
             next_root_node = key_root_node.next
             
             if next_root_node.value == None:
-                # union with an empty set: update index of current tree and remove next None node
+                # union with an empty set:
+                # update index of current tree and remove next None node
                 root_data[key_root] = (key_root_index + 1, key_root_node)
                 root_ll.remove(next_root_node)
                 continue
 
-            next_root_index, next_root_node = root_data[next_root_node.value]   # find next tree-set K(l)
+            # find next tree-set K(l) and union K(j) with K(l)
+            next_root_index, next_root_node = root_data[next_root_node.value] 
             forest.union(key_root, next_root_node.value)
 
-            # Due to the union by rank heuristic, the root of the merged trees could be either key_root or next_root
+            # the root could be either key_root or next_root
+            # due to the union by rank heuristic
             merged_trees_root = forest.find(key_root)
             if merged_trees_root == key_root:
                 root_ll.remove(key_root_node.next)
@@ -161,4 +169,6 @@ if __name__ == "__main__":
 
 ## Final Thoughts
 
-I have to admit, I'm not entirely sure that there are any practical applications for the off-line minimum problem and a quick internet search seemed to mostly confirm that. But at least I had fun!
+I have to admit, I'm not entirely sure that there are any practical applications for the off-line minimum problem and a quick internet search seemed to mostly confirm that.
+
+But at least I had fun!
