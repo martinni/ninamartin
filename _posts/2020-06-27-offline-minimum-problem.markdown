@@ -105,7 +105,7 @@ def build_forest(sequence):
             current_tree_root = forest.find(key)
 
     if current_tree_root:
-        # Put last tree root inside the linked list
+        # put last tree root inside the linked list
         root_node = root_ll.append(current_tree_root)
         root_data[current_tree_root] = (j, root_node)
 
@@ -134,7 +134,7 @@ def off_line_minimum(domain, sequence):
             
             if next_root_node.value == None:
                 # union with an empty set:
-                # update index of current tree and remove next None node
+                # update index of current tree and remove next node
                 root_data[key_root] = (key_root_index + 1, key_root_node)
                 root_ll.remove(next_root_node)
                 continue
