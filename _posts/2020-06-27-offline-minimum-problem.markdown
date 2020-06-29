@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "The off-line mininum problem with disjoint sets"
+title:  "The offline mininum problem with disjoint sets"
 date:   2020-06-27 16:43:00 +0100
 categories: algorithms
 ---
 
-Continuing my journey through [Algorithms](https://www.amazon.co.uk/Introduction-Algorithms-Thomas-H-Cormen/dp/0262033844/ref=sr_1_1?adgrpid=52755502465&dchild=1&gclid=EAIaIQobChMIp4-WpbSi6gIV6YBQBh33twKZEAAYASAAEgJcbvD_BwE&hvadid=259080196986&hvdev=c&hvlocphy=9045997&hvnetw=g&hvqmt=e&hvrand=17787531869004437962&hvtargid=kwd-300139095800&hydadcr=17612_1775484&keywords=introduction+to+algorithm&qid=1593275108&sr=8-1&tag=googhydr-21), I just finished the "Advanced data structures" section which walked me through the wonderful world of B-Trees, Fibonacci heaps, van Emde Boas Trees and Disjoint sets.
+Continuing my journey through [Introduction to Algorithms](https://www.amazon.co.uk/Introduction-Algorithms-Thomas-H-Cormen/dp/0262033844/ref=sr_1_1?adgrpid=52755502465&dchild=1&gclid=EAIaIQobChMIp4-WpbSi6gIV6YBQBh33twKZEAAYASAAEgJcbvD_BwE&hvadid=259080196986&hvdev=c&hvlocphy=9045997&hvnetw=g&hvqmt=e&hvrand=17787531869004437962&hvtargid=kwd-300139095800&hydadcr=17612_1775484&keywords=introduction+to+algorithm&qid=1593275108&sr=8-1&tag=googhydr-21), I just finished the "Advanced data structures" section which walked me through the wonderful world of B-Trees, Fibonacci heaps, van Emde Boas Trees and Disjoint sets.
 
 B-Trees are fairly simple to grasp (tl;dr: high branching factor, optimised disk access). Fibonacci heaps are a bit fiddly for certain operations but ok if you have a visual representation of the heap to follow what's going on. Van Emde Boas trees.. I don't really want to talk about them (my head still hurts from that chapter). And finally, we've got lovely disjoint sets, which are simple yet incredibly efficient thanks to a couple of well-chosen heuristics.
 
@@ -15,7 +15,7 @@ If you are not familiar with disjoint sets, [here](https://jackmorris.xyz/2020/d
 
 ## Problem statement
 
- The **off-line minimum** problem asks us to maintain a dynamic set *T* of elements from the domain `{1,2,...,n}` under the operations INSERT and EXTRACT-MIN. We are given a sequence *S* of *n* INSERT and *m* EXTRACT-MIN calls, where each key in `{1,2,...,n}` is inserted exactly once. We wish to determine which key is returned by each EXTRACT-MIN call. Specifically, we wish to fill in an array `extracted[1..m]`, where for `i = 1,2,...`, *m* is the key returned by the *i*th EXTRACT-MIN call. The problem is "off-line" in the sense that we are allowed to process the entire sequence *S* before determining any of the returned keys.
+ The **offline minimum** problem asks us to maintain a dynamic set *T* of elements from the domain `{1,2,...,n}` under the operations INSERT and EXTRACT-MIN. We are given a sequence *S* of *n* INSERT and *m* EXTRACT-MIN calls, where each key in `{1,2,...,n}` is inserted exactly once. We wish to determine which key is returned by each EXTRACT-MIN call. Specifically, we wish to fill in an array `extracted[1..m]`, where for `i = 1,2,...`, *m* is the key returned by the *i*th EXTRACT-MIN call. The problem is "off-line" in the sense that we are allowed to process the entire sequence *S* before determining any of the returned keys.
 
 1. In the following instance of the off-line minimum problem, each INSERT is represented by a number and each EXTRACT-MIN is represented by the letter *E*:
     
@@ -50,7 +50,7 @@ OFF-LINE-MINIMUM(m, n)
 
 1. [4, 3, 2, 6, 8, 1]
 
-2. So here's my less than rigorous explanation of the proposed algorithm:
+2. Here's my less than rigorous explanation of the proposed algorithm:
 
     Elements in the domain are processed incrementally. If the current element *i* is in one of the sets, we know that it will be extracted by the "next" extraction (which is extraction number *j* if the element is in set *K<sub>j</sub>*), if there is one. How do we know this? We know that *i* couldn't have been extracted by an extraction prior to extraction *j*, as *i* wasn't part of the sequence at that point. We also know that when we reach extraction *j*, *i* is the smallest element in the sequence, as smaller elements have already been extracted in previous iterations of the loop, and the union operation at the end ensured that only "subsequent" extractions are considered for the remaining element inside the sequence.  
 
@@ -73,12 +73,12 @@ Here's the code:
 
 import collections
 from disjoint_set import DisjointSet
-from pyllist import sllist
+from pyllist import dllist
 
 
 def build_forest(sequence):
     forest = DisjointSet()
-    root_ll = sllist()  # linked list to easily find next tree-set K(l)
+    root_ll = dllist()  # linked list to easily find next tree-set K(l)
     root_data = {}  # dict mapping elements to their index and linked list node
 
     if not sequence:
@@ -167,8 +167,18 @@ if __name__ == "__main__":
     main()
 ```
 
+### Let's talk complexity.
+
+To build the forest and satellite data, we go over a sequence of *m* insertions, union and find operations. If the disjoint set is built with the path compression and union by rank heuristics (as it should), this yields a total complexity of *O(mα(m))* which is effectively *O(m)* in any practical application. The additional operations of appending into the linked list and inserting into the map are constant so they don't change the complexty.
+
+For the second part, we have for each iteration of the for loop a couple of map lookups (constant), access to the next element in the linked list (constant), removal from the linked list with direct access to the element (constant as list is doubly linked), plus a union and a couple of find operations on the disjoint sets forest (amortised constant). That gives us a complexity of *O(n)*.
+
+Since n is an upper bound for m, we have a resulting complexity of *O(n)*. Yay, linear time!
+
+Well... linear in n, which is the number of elements in the domain. If the domain is large and the sequence small, a brute force solution will probably give better results. But where's the fun in that?
+
 ## Final Thoughts
 
-I have to admit, I'm not entirely sure that there are any practical applications for the off-line minimum problem and a quick internet search seemed to mostly confirm that.
+I have to admit, I'm not entirely sure that there are any practical applications for the offline minimum problem and a quick internet search seemed to mostly confirm that.
 
-But at least I had fun!
+Oh well, at least I had fun!
