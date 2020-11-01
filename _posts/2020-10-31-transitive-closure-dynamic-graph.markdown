@@ -33,7 +33,7 @@ If we add a new edge from vertex 4 to vertex 2, the transitive closure will now 
 
 So how do we  maintain the transitive closure of a graph as we insert new edges? 
 
-For any newly added edge *(u, v)*, we just need to indicate that all the vertices that currently have a path to *u* will now also have a path to all the vertices that have a path from *v*.
+For any newly added edge *(u, v)*, we just need to indicate that all the vertices that currently have a path to *u* will now also have a path to all the vertices that currently have a path from *v*.
 Nothing that a double *for* loop over all of vertices can't solve:
 
 ```python
