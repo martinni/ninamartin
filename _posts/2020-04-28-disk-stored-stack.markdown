@@ -21,12 +21,6 @@ That is why computers also have a secondary storage.
 
 For a few decades we used hard disk drives (HDD) as secondary storage. Hard drives are essentially on magnetic platters rotating around a spindle. These platters are divided into billions of tiny areas that contain either a 0 (unmagnetised cell) or a 1 (magnetised cell). Each platter is read and written with a magnetic head at the end of an arm. The arms can move their heads towards or away from the spindle. To read or write a cell, we need the arm's head to reach that cell which involves two mechanical movements: the platter rotation and the movement of the arm itself. To reach a particular cell, you might have to wait for a full platter rotation which is in the order of milliseconds. Because disk access is based on mechanical movements, hard drives are slow.
 
-{:refdef: style="text-align: center;"}
-![hard drive](/img/hard-drive.png)
-<br/><br/>
-*A traditional hard drive*
-{: refdef}
-
 In recent years hard drives have been supplanted with solid state drives. Just like RAM, these are based on integrated circuits and are therefore much faster than disk. Unlike RAM, the memory is non volatile which means you can persist it when the power is off. It's still not nearly as fast as RAM because of the data throughput capacity between the drive and the motherboard.
 
 In order to optimise the time spent on mechanical movements (for HDD), or data transfer, disks access not just one element at a time but several. Information on a disk is divided into equal size blocks of bits, called *pages*.
@@ -118,4 +112,4 @@ That's it!
 
 With the potential function of <code>Φ(S) = |S.size - M|</code> we have proved that the amortised cost of both PUSH and POP was constant with the two pages implementation. Visually you can see that our previous boundary problem has been solved, as a push following this pop would not incur any disk access.
 
-I think it's really cool that a small adjustment in the stack implementation allows us to change the worst case complexity in such a drastic way. This is an application of amortised analysis where you have to "visualise" the operations to make sense of the maths.
+It's nice that a small adjustment in the stack implementation allows us to change the worst case complexity in such a drastic way. This is an application of amortised analysis where it helps to "visualise" the operations to make sense of the maths.
