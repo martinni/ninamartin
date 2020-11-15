@@ -83,6 +83,6 @@ As I mentioned before the strategy we chose for the array contraction does not a
 
 # Final thoughts
 
-This kind of topics is what makes me love CS. It’s substantial enough to require some brainpower but it’s also very approachable, you can make analogies with the real world, and the maths behind it are simple and elegant!
+This kind of topics is what I like the most about CS. It’s substantial enough to require some brainpower but it’s also very approachable, you can make analogies with the real world, and the maths behind it are simple and elegant!
 
 
