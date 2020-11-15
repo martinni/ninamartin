@@ -5,8 +5,6 @@ date:   2020-11-14 15:33:00 +0100
 categories: algorithms
 ---
 
-# Maximum flow and the escape problem
-
 Last week-end, my journey across the world of graphs reached its conclusion as I completed the "Maximum Flow" chapter of *Introducton to Algorithms*. After this, I think I will set algorithms aside for the rest of the year and let all that newly acquired knowledge sink in (or more likely just forget everything but I prefer to look at it optimistically).
 
 When it comes to solving the [maximum flow](https://en.wikipedia.org/wiki/Maximum_flow_problem) problem, the go-to algorithm is usually Ford-Fulkerson. Writing (or even just reading) a fully-fleshed Ford-Fulkerson implementation can be a painstaking task as it's easy to get lost in the details. But the general idea behind it is reasonably easy to grasp. Ford-Fulkerson uses a greedy approach: as long as we find a path from the source vertex to the sink vertex with some available capacity, we use that capacity and send flow through it. This leaves a "residual graph" with "residual capacity" that we can use to "augment" the path further. We keep iterating until there is no path anymore in the residual graph. [Here](https://brilliant.org/wiki/ford-fulkerson-algorithm/) is a very nice introduction to get familiar with the specifics.
@@ -14,9 +12,9 @@ When it comes to solving the [maximum flow](https://en.wikipedia.org/wiki/Maximu
 What is remarkable with maximum flow algorithms is that they can be applied to a very broad range of problems, including problems that might seem unrelated at first sight. Like the following one.
 
 
-## The escape problem
+# The escape problem
 
-### Problem Statement
+## Problem Statement
 
 An *n* x *n* grid is an undirected graph consisting of *n* rows and *n* columns of vertices as shown in the figures below. We denote the vertex in the *i*th row and the *j*th column by (*i*, *j*). All vertices in a grid have exactly four neighbours, except for the boundary vertices, which are the points (*i*, *j*) for which *i* = 1, *i* = *n*, j = *1* or j = *n*.
 
@@ -27,7 +25,7 @@ Given *m* <= *n*<sup>2</sup> starting points (*x*<sub>1</sub>, *y*<sub>1</sub>),
 
 Describe an efficient algorithm to solve the escape problem, and analyse its running time.
 
-### Solution
+## Solution
 
 I will start with this section with a disclaimer: I slightly changed the problem statement in order to make my life easier. 
 
