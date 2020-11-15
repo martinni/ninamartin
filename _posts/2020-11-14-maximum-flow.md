@@ -53,8 +53,10 @@ class Graph:
     def FordFulkerson(self, source, sink):
         # <insert FordFulkerson implementation here>
 
-# To convert the adjacency list to an adjacency matrix, each vertex must be assigned an "index" that will determine their position in the matrix.
-# We assign the vertices row by row from 1 to n^2, with 2 additional indices for the source and sink.
+# To convert the adjacency list to an adjacency matrix, each vertex must be assigned an "index" 
+# that will determine their position in the matrix.
+# We assign the vertices row by row from 1 to n^2, with 2 additional indices for the source and
+# sink.
 def get_vertex_index(vertex, adj_list_size):
     grid_element_count = adj_list_size - 2    # minus S and T
     grid_dimension = int(math.sqrt(grid_element_count))
@@ -73,7 +75,8 @@ def adjacency_list_to_adjacency_matrix(adj_list):
     matrix_dimension = len(adj_list) * len(adj_list)
     adj_matrix = [[0 for i in range(matrix_dimension)] for j in range(matrix_dimension)]
 
-    # for each connection, find the index of the 2 neighbours in the matrix representation and update the matrix
+    # for each connection, find the index of the 2 neighbours in the matrix representation and
+    # update the matrix
     for vertex in adj_list.keys():
         vertex_index = get_vertex_index(vertex, len(adj_list))
         for neighbour in adj_list[vertex]:
