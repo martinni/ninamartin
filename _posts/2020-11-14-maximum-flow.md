@@ -33,7 +33,7 @@ The problem states that the paths must be **vertex-disjoint**. In order to model
 
 To avoid having to resort to this trick, I changed the problem statement to find *m* **edge-disjoint** paths rather than **vertex-disjoint**. This way, we can immediately modelise this as a maximum flow problem by assigning a capacity of 1 to each edges. In addition, we need to add a source vertex that connects to all of the "starting point" vertices, and a sink vertex that all the "exit vertices" (vertices sitting on the edge of the matrix) connect to.
 
-This is what such a graph looks like in the case of the first grid:
+If we use the first grid above as the input, this is what such a graph would look like:
 
 ![max-flow](/img/max-flow.png)
 
