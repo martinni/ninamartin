@@ -12,9 +12,9 @@ When it comes to solving the [maximum flow](https://en.wikipedia.org/wiki/Maximu
 What is remarkable with maximum flow algorithms is that they can be applied to a very broad range of problems, including problems that might seem unrelated at first sight. Like the following one.
 
 
-# The escape problem
+## The escape problem
 
-## Problem Statement
+### Problem Statement
 
 An *n* x *n* grid is an undirected graph consisting of *n* rows and *n* columns of vertices as shown in the figures below. We denote the vertex in the *i*th row and the *j*th column by (*i*, *j*). All vertices in a grid have exactly four neighbours, except for the boundary vertices, which are the points (*i*, *j*) for which *i* = 1, *i* = *n*, j = *1* or j = *n*.
 
@@ -25,7 +25,7 @@ Given *m* <= *n*<sup>2</sup> starting points (*x*<sub>1</sub>, *y*<sub>1</sub>),
 
 Describe an efficient algorithm to solve the escape problem, and analyse its running time.
 
-## Solution
+### Solution
 
 I will start with this section with a disclaimer: I slightly changed the problem statement in order to make my life easier. 
 
