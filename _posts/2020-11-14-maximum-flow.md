@@ -27,7 +27,7 @@ Describe an efficient algorithm to solve the escape problem, and analyse its run
 
 ### Solution
 
-I will start with this section with a disclaimer: I slightly changed the problem statement in order to make my life easier. 
+I will start this section with a disclaimer: I slightly changed the problem statement in order to make my life easier. 
 
 The problem states that the paths must be **vertex-disjoint**. In order to modelise this problem as a maximum flow problem, we would have to consider that vertices have a unit capacity. However the Ford Fulkerson algorithm applies on a maximum flow problems modelised with edge capacity. There is a small trick one can do to transform a maximum flow problem with vertex capacity to a maximum flow problem with edge capacity, which you can read about [here](https://en.wikipedia.org/wiki/Maximum_flow_problem#Maximum_flow_with_vertex_capacities). General idea is to extend the original graph by replacing each vertex in the original graph with 2 vertices, with an edge going from the first vertex to the second one, having a capacity equal to the capacity of the original vertex.
 
