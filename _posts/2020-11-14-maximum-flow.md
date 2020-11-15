@@ -5,7 +5,7 @@ date:   2020-11-14 15:33:00 +0100
 categories: algorithms
 ---
 
-Last week-end, my journey across the world of graphs reached its conclusion as I completed the "Maximum Flow" chapter of *Introducton to Algorithms*. After this, I think I will set algorithms aside for the rest of the year and let all that newly acquired knowledge sink in (or more likely just forget everything but I prefer to look at it optimistically).
+Last weekend, my journey across the world of graphs reached its conclusion as I completed the "Maximum Flow" chapter of *Introducton to Algorithms*. After this, I think I will set algorithms aside for the rest of the year and let all that newly acquired knowledge sink in (or more likely just forget everything but I prefer to look at it optimistically).
 
 When it comes to solving the [maximum flow](https://en.wikipedia.org/wiki/Maximum_flow_problem) problem, the go-to algorithm is usually Ford-Fulkerson. Writing (or even just reading) a fully-fleshed Ford-Fulkerson implementation can be a painstaking task as it's easy to get lost in the details. But the general idea behind it is reasonably easy to grasp. Ford-Fulkerson uses a greedy approach: as long as we find a path from the source vertex to the sink vertex with some available capacity, we use that capacity and send flow through it. This leaves a "residual graph" with "residual capacity" that we can use to "augment" the path further. We keep iterating until there is no path anymore in the residual graph. [Here](https://brilliant.org/wiki/ford-fulkerson-algorithm/) is a very nice introduction to get familiar with the specifics.
 
