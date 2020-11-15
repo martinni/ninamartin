@@ -5,8 +5,6 @@ date:   2020-10-31 17:09:00 +0100
 categories: algorithms
 ---
 
-# Transitive closure of a dynamic graph
-
 Hi there, it's been a few months since my last post!
 
 I have to admit, the motivation for starting this website emerged, to a certain extent, from the necessity to find lockdown friendly pastimes. But as stuff started to reopen over the summer, writing has been displaced by other distractions. The acquisition of an Xbox at the end of the spring was admittedly another contributing factor. But as it looks like we're heading back into a full lockdown situation, what better time to pick *Introduction to Algorithms* right back up and do some problem solving!
