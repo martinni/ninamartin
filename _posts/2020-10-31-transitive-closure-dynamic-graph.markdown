@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Transitive closure of a dynamic graph"
-date:   2020-10-31 17:09:00 +0100
+date:   2020-10-31 17:09:00 +0000
 categories: algorithms
 ---
 
