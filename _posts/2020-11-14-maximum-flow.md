@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Maximum flow and the escape problem"
-date:   2020-11-14 15:33:00 +0100
+date:   2020-11-14 15:33:00 +0000
 categories: algorithms
 ---
 
