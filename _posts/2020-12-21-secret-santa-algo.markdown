@@ -27,7 +27,7 @@ The resulting traversal sequence is your draw chain. If you traversed in order A
 
 For the purpose of the demo I have used Game of Thrones characters. I have set exclusions on direct relationships, including and limited to: parent/child (biological or adopted), sibling, first cousin, uncle/aunt/nephew/niece.
 
-```Python
+```python
 #!/usr/bin/env python
 
 import random
