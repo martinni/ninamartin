@@ -125,4 +125,6 @@ And now, let's watch this piece of code at work!
 
 Candidate segments for the convex hull are displayed in red, and discarded segments in black.
 
+{:refdef: style="text-align: center;"}
 ![Convex Hull](/img/graham-scan-big.gif)
+{: refdef}
