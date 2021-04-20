@@ -49,4 +49,4 @@ Now you can't say that an insertion sort runs in θ(1) because there is no value
 
 So there we have it, the defintion of an asymptotic tight bound. The one that is actually useful to describe the efficiency of an algorithm. All those times when we said big-O what we actually meant was big theta! 
 
-The software industry has abused the notation so much now that I'm not sure it's worth going back unless you talk about complexity in an academic context. But it's worth keeping in mind next time you hear somone claiming that a linear search runs in O(n<sup>n</sup>)!
+The software industry has abused the notation so much now that I'm not sure it's worth going back unless you talk about complexity in an academic context. But it's worth keeping in mind next time you hear somone claiming that a linear search runs in O(n<sup>n</sup>).
