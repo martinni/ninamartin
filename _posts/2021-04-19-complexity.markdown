@@ -47,6 +47,6 @@ So now if you combine these two concepts you get the big θ notation, defined as
 
 Now you can't say that an insertion sort runs in θ(1) because there is no value of *c<sub>2</sub>* that fits the bill for the above definition. And to take our previous example, our hello world program also doesn't run in θ(n<sup>2</sup>) because there is no possible constant c<sub>1</sub> that would make the above inequality hold asymptotically. However if you choose the appropriate values for c<sub>1</sub> and c<sub>2</sub> (with c<sub>1</sub> ≤ c<sub>2</sub>), you can say indeed that the hello world program runs in θ(1) and that insertion sort runs in θ(n<sup>2</sup>).
 
-So there we have it, the defintion of an asymptotic tight bound. The one that is actually useful to describe the efficiency of an algorithm. All those times when we said big-O what we actually meant was big omega! 
+So there we have it, the defintion of an asymptotic tight bound. The one that is actually useful to describe the efficiency of an algorithm. All those times when we said big-O what we actually meant was big theta! 
 
 The software industry has abused the notation so much now that I'm not sure it's worth going back unless you talk about complexity in an academic context. But it's worth keeping in mind next time you hear somone claiming that a linear search runs in O(n<sup>n</sup>)!
