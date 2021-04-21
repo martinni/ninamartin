@@ -29,7 +29,7 @@ The big O notation defines an asymptotic upper bound, but it doesn't have to be 
 O(g(n)) = {f(n) : there exist positive constants c and n<sub>0</sub> such that 0 ≤ f(n) ≤ cg(n) for all n ≥ n<sub>0</sub>}
 </pre>
 
-*Any* function that meets the above criteria qualifies for big O notation. So if your program takes input of size N and just prints "Hello World", it sure runs in O(1) but it also runs in O(n<sup>2</sup>) and in O(<sup>n<sup>n</sup></sup>) for that matter, because all these functions meet the above definition for any positive value of *c* or *n<sub>0</sub>*.
+*Any* function that meets the above criteria qualifies for big O notation. So if your program takes input of size N and just prints "Hello World", it sure runs in O(1) but it also runs in O(n<sup>2</sup>) and in O(n<sup>n<sup>n</sup></sup>) for that matter, because all these functions meet the above definition for any positive value of *c* or *n<sub>0</sub>*.
 
 Symmetrically you can define an asymptotic lower bound, typically written with big Ω notation:
 
