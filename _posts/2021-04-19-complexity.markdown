@@ -15,7 +15,7 @@ But not today, because today I would like to talk about big O notation.
 
 Big O notation.
 
-Every CS student and aspiring software engineer have learnt to understand it and use it to describe the efficiency of their code. It's an obligatory step of the tech interview, the question everyone expects after solving the coding test: "What is the runtime complexity of your implementation?". Just to make sure that we have the fundamentals covered, that we understand what we're doing.
+Every CS student and aspiring software engineer has learnt to understand it and use it to describe the efficiency of their code. It's an obligatory step of the tech interview, the question everyone expects after solving the coding test: "What is the runtime complexity of your implementation?". Just to make sure that we have the fundamentals covered, that we understand what we're doing.
 
 So what does it mean when an algorithm runs in, say, O(n<sup>2</sup>)? Well easy, that means that the runtime of the algorithm grows quadratically with the input size... 
 
@@ -29,7 +29,7 @@ The big O notation defines an asymptotic upper bound, but it doesn't have to be 
 O(g(n)) = {f(n) : there exist positive constants c and n<sub>0</sub> such that 0 ≤ f(n) ≤ cg(n) for all n ≥ n<sub>0</sub>}
 </pre>
 
-*Any* function that meets the above criteria qualifies for big O notation. So if your program takes input of size N and just prints "Hello World", it sure runs in O(1) but it also runs in O(n<sup>2</sup>) and in (O<sup>n<sup>n</sup></sup>) for that matter, because all these functions meet the above definition for any positive value of *c* or *n<sub>0</sub>*.
+*Any* function that meets the above criteria qualifies for big O notation. So if your program takes input of size N and just prints "Hello World", it sure runs in O(1) but it also runs in O(n<sup>2</sup>) and in O(<sup>n<sup>n</sup></sup>) for that matter, because all these functions meet the above definition for any positive value of *c* or *n<sub>0</sub>*.
 
 Symmetrically you can define an asymptotic lower bound, typically written with big Ω notation:
 
@@ -37,7 +37,7 @@ Symmetrically you can define an asymptotic lower bound, typically written with b
 Ω(g(n)) = {f(n) : there exist positive constants c and n<sub>0</sub> such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n<sub>0</sub>}
 </pre>
 
-Similarly to the reasoning above, you can say that an insertion sort runs in Ω(1) and you would be right, because there are many values of *c* and *n<sub>0</sub>* you can pick to that *g(n)=1* meets the above definition. The lower bound doesn't have to be tight.
+Similarly to the reasoning above, you can say that an insertion sort runs in Ω(1) and you would be right, because there are many values of *c* and *n<sub>0</sub>* you can pick so that *g(n)=1* meets the above definition. The lower bound doesn't have to be tight.
 
 So now if you combine these two concepts you get the big θ notation, defined as follow:
 
