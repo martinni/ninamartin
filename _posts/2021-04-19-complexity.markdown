@@ -5,7 +5,7 @@ date:   2021-04-19 21:34:00 +0100
 categories: algorithms
 ---
 
-Today is April 19th 2021. Exactly one year ago, I wrote my first post and brought this website to life. Happy anniversary, blog! :birthday:
+Today is April 19th 2021. Exactly one year ago, I wrote my first post and brought this website to life. Happy birthday, blog! :birthday:
 
 The idea of doing some writing and putting it online had been sitting at the back of my head for a while. Lockdown boredom was just the extra nudge I needed for the idea to materialise. I wasn't entirely sure what I would blog about and so far it turns out to have been mainly algorithms. But stay tuned, because other topics are coming!
 
