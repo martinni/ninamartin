@@ -117,7 +117,7 @@ def main():
     print("Secret Santa draw completed!")
 
 
-if __name__ == "__main__":ƒ
+if __name__ == "__main__":
     main()
 ```
 
