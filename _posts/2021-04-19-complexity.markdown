@@ -19,7 +19,7 @@ Every CS student and aspiring software engineer has learnt to understand it and 
 
 So what does it mean when an algorithm runs in, say, O(n<sup>2</sup>)? Well easy, that means that the runtime of the algorithm grows quadratically with the input size... 
 
-Well, yeah, but also no.
+Well, not really.
 
 # What it actually means
 
